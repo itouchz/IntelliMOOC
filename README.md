@@ -1,2 +1,2 @@
-# AnsAsVid
-AnsAsVid: Answering Question by Recommending Ranked Videos in Massive Open Online Course
+# IntelliMOOC
+IntelliMOOC: Intelligent MOOC Environment for Seamless Study Experience
