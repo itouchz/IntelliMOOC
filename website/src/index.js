@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import ProjectOverview from './ProjectOverview'
+import Demo from './Demo'
 import 'antd/dist/antd.css'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -13,9 +14,11 @@ if (location.pathname === '/' || location.pathname === '/home' || location.pathn
 } else if (location.pathname === '/overview') {
     ReactDOM.render(<ProjectOverview />, document.getElementById('root'));
 } else if (location.pathname === '/team') {
-    // ReactDOM.render(<ProjectOverview />, document.getElementById('root'));
+    // ReactDOM.render(<Team />, document.getElementById('root'));
 } else if (location.pathname === '/paper') {
-    // ReactDOM.render(<ProjectOverview />, document.getElementById('root'));
+    // ReactDOM.render(<Paper />, document.getElementById('root'));
+} else if (location.pathname === '/demo') {
+    ReactDOM.render(<Demo />, document.getElementById('root'));
 } else {
     // 404 Page
 }

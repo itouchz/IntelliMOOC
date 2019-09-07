@@ -1,17 +1,22 @@
-const admin = require("firebase-admin");
-const serviceAccount = require("service-account-key.json");
+// const admin = require("firebase-admin");
+// const serviceAccount = require("intellimooc-firebase-admin.json");
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://intellimooc.firebaseio.com"
-});
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     databaseURL: "https://intellimooc.firebaseio.com"
+// });
 
 
 const fs = require('fs')
-const csv = require('fast-csv')
+const videos = JSON.parse(fs.readFileSync('../dataset/videos.json'))
 
-let count = 0
+let videos_obj = Object.keys(videos['youtube_id']).map(key => Object.create({}))
+const keys = Object.keys(videos)
 
-fs.createReadStream('../dataset/videos.csv')
-    .pipe(csv.parse({ headers: ['data'], renameHeaders: true, delimiter: '\n' }))
-    .on('data', row => console.log(row.data.split('_PASA_')))
+keys.map(key => {
+    for (const [index, value] of Object.entries(videos[key])) {
+        videos_obj[index][key] = value
+    }
+})
+
+console.log(videos_obj[0])
