@@ -1,2 +1,2 @@
 # IntelliMOOC
-IntelliMOOC: Intelligent MOOC Environment for Seamless Study Experience
+IntelliMOOC: Intelligent Online Learning Framework for MOOC Platforms
